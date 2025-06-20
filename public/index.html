@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenLayers Basic Map</title>
+ 
+  <!-- OpenLayers CSS from CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css" type="text/css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+  <!-- Map container -->
+  <div id="map">
+
+
+    
+  </div>
+
+
+ 
+  <!-- OpenLayers JS from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+ 
+  <!-- JavaScript to create the map -->
+  <script>
+    console.log(ol,"test")
+    const map = new ol.Map({
+      target: 'map', // The id of the element to render the map in
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM() // OSM stands for OpenStreetMap layer
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([0,0]), // centers the map
+        zoom: 2
+      })
+    });
+  </script>
+ 
+</body>
+</html>
